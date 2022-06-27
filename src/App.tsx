@@ -1,10 +1,11 @@
-import { FC } from "react"
-import { AppContainer } from "./styles"
+import { FC } from 'react';
+import { AddNewItem } from './AddNewItem';
+import { AppContainer } from './styles';
 
 export const App: FC = () => {
   return (
     <AppContainer>
-      Column will go here
+      <AddNewItem toggleButtonText="+ Add another list" onAdd={console.log} />
     </AppContainer>
-  )
-}
+  );
+};

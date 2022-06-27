@@ -66,6 +66,7 @@ export const NewItemButton = styled.div`
   background-color: #5aac44;
   border-radius: 3px;
   border: none;
+  cursor: pointer;
   box-shadow: none;
   color: #fff;
   padding: 6px 12px;

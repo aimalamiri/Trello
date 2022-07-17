@@ -1,4 +1,3 @@
-import { title } from 'process';
 import React, { useState } from 'react';
 import { NewItemFormContainer, NewItemButton, NewItemInput } from './styles';
 import { useFocus } from './utils/useFocus';

@@ -21,7 +21,7 @@ export const ColumnContainer = styled.div`
 
 export const ColumnTitle = styled.div`
   padding: 6px 16px 12px;
-  font-weight: bodl;
+  font-weight: bold;
 `;
 
 export const CardContainer = styled.div`

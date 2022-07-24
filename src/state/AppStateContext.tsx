@@ -2,12 +2,12 @@ import { createContext, useContext, FC } from 'react';
 
 type Task = {
   id: string;
-  text: string;
+  title: string;
 };
 
 type List = {
   id: string;
-  text: string;
+  title: string;
   tasks: Task[];
 };
 
@@ -19,18 +19,18 @@ const appData: AppState = {
   lists: [
     {
       id: '0',
-      text: 'To do',
-      tasks: [{ id: 'c0', text: 'Generate app scaffold' }],
+      title: 'To do',
+      tasks: [{ id: 'c0', title: 'Generate app scaffold' }],
     },
     {
       id: '1',
-      text: 'In Progress',
-      tasks: [{ id: 'c2', text: 'Learn TypeScript' }],
+      title: 'In Progress',
+      tasks: [{ id: 'c2', title: 'Learn TypeScript' }],
     },
     {
       id: '2',
-      text: 'Done',
-      tasks: [{ id: 'c3', text: 'Begin to use Static Typing' }],
+      title: 'Done',
+      tasks: [{ id: 'c3', title: 'Begin to use Static Typing' }],
     },
   ],
 };
@@ -50,7 +50,7 @@ export const AppStateProvider: FC<AppStateProps> = ({ children }) => {
   const { lists } = appData;
 
   const getTasksByListId = (id: string) => {
-    return lists.find((list) => (list.id = id))?.tasks || [];
+    return lists.find((list) => (list.id === id))?.tasks || [];
   };
 
   return (

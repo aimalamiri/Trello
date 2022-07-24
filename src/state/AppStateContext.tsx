@@ -1,19 +1,5 @@
 import { createContext, useContext, FC } from 'react';
-
-type Task = {
-  id: string;
-  title: string;
-};
-
-type List = {
-  id: string;
-  title: string;
-  tasks: Task[];
-};
-
-export type AppState = {
-  lists: List[];
-};
+import { Task, List, AppState, appStateReducer } from './appStateReducer';
 
 const appData: AppState = {
   lists: [
@@ -41,8 +27,8 @@ type AppStateContextProps = {
 };
 
 type AppStateProps = {
-  children?: React.ReactNode
-}
+  children?: React.ReactNode;
+};
 
 const AppStateContext = createContext<AppStateContextProps>({} as AppStateContextProps);
 
@@ -50,7 +36,7 @@ export const AppStateProvider: FC<AppStateProps> = ({ children }) => {
   const { lists } = appData;
 
   const getTasksByListId = (id: string) => {
-    return lists.find((list) => (list.id === id))?.tasks || [];
+    return lists.find((list) => list.id === id)?.tasks || [];
   };
 
   return (
@@ -62,4 +48,4 @@ export const AppStateProvider: FC<AppStateProps> = ({ children }) => {
 
 export const useAppState = () => {
   return useContext(AppStateContext);
-}
+};

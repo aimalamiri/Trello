@@ -6,6 +6,13 @@ export type Action =
   | {
       type: 'ADD_TASK';
       payload: { title: string; listId: string };
+    }
+  | {
+      type: 'MOVE_LIST';
+      payload: {
+        draggedId: string;
+        hoverId: string;
+      };
     };
 
 export const addTask = (title: string, listId: string): Action => ({
@@ -16,4 +23,9 @@ export const addTask = (title: string, listId: string): Action => ({
 export const addList = (title: string): Action => ({
   type: 'ADD_LIST',
   payload: title,
+});
+
+export const moveList = (draggedId: string, hoverId: string): Action => ({
+  type: 'MOVE_LIST',
+  payload: { draggedId, hoverId },
 });

@@ -8,7 +8,7 @@ export const findItemIndexById = <TItem extends Item>(items: TItem[], id: string
 
 export const moveItem = <TItem>(array: TItem[], from: number, to: number) => {
   const item = array[from];
-  return insertItemAtIndex(removeItemAtIndex(array, from), to, item);
+  return insertItemAtIndex(removeItemAtIndex(array, from), item, to);
 };
 
 export const removeItemAtIndex = <TItem>(array: TItem[], index: number) => {
